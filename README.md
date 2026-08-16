@@ -1,6 +1,7 @@
 # Exotic States of Matter -- Interactive Bose-Einstein Condensate Phase Sandbox
 An interactive educational web application that demonstrates the transition of a trapped cloud of bosonic atoms into a Bose-Einstein Condensate (BEC) as the temperature approaches absolute zero.
-Student: Umme Ammar Jannati Borno 
+## Information
+Student Name: Umme Ammar Jannati Borno 
 Student ID: 0242310005101834
 Project: 48
 Category: Cross-Cutting Science Synthesis
@@ -19,3 +20,12 @@ Section: 64_L
 - Time-of-Flight / Momentum Profile visualization
 - Theory and Guide sections
 - Responsive user interface
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- HTML Canvas
+## Purpose
+
+This project is designed as an educational interactive experience for understanding the basic concept of Bose-Einstein Condensation and the effect of temperature on quantum matter.
