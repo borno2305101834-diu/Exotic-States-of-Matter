@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Exotic States of Matter | BEC Phase Sandbox
+    </title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+
+<body>
+
+    <div class="wrap">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="top">
+
+            <div class="brand">
+
+                <div class="eyebrow">
+                    Exotic States of Matter
+                </div>
+
+                <h1>
+                    Bose–Einstein
+                    <em>Condensate</em>
+                    Phase Sandbox
+                </h1>
+
+                <p>
+                    Cool a trapped cloud of bosonic atoms toward
+                    absolute zero and watch a classical gas collapse
+                    into a single macroscopic matter wave.
+                </p>
+
+            </div>
+
+
+            <div class="top-meta">
+
+                MODEL &nbsp;·&nbsp; IDEAL + MEAN-FIELD
+
+                <br>
+
+                UNITS &nbsp;·&nbsp; nK &nbsp;/&nbsp; TRAP-NORMALIZED
+
+                <br>
+
+                STATUS &nbsp;·&nbsp;
+                <span style="color:var(--cyan)">
+                    LIVE
+                </span>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             NAVIGATION
+             ================================================= -->
+
+        <nav
+            class="tabs"
+            aria-label="Page navigation"
+        >
+
+            <a
+                href="index.html"
+                class="active"
+            >
+                Home
+            </a>
+
+            <a href="sandbox.html">
+                Sandbox
+            </a>
+
+            <a href="theory.html">
+                Theory
+            </a>
+
+            <a href="guide.html">
+                Guide
+            </a>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             HOME PAGE
+             ================================================= -->
+
+        <main>
+
+            <section
+                class="page current"
+                id="page-home"
+            >
+
+
+                <!-- HERO -->
+
+                <div class="hero-home">
+
+                    <div class="kicker">
+                        Interactive Science Explorer
+                    </div>
+
+
+                    <h1>
+                        From hot cloud
+                        <br>
+                        to quantum matter.
+                    </h1>
+
+
+                    <p class="lede">
+
+                        Explore the Bose–Einstein condensate
+                        transition in a simplified, physically
+                        motivated sandbox. Tune temperature,
+                        atom number, trap frequency and interactions
+                        — then watch the phase emerge.
+
+                    </p>
+
+
+                    <div class="spectrum-strip"></div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     HOME CARDS
+                     ================================================= -->
+
+                <div class="home-cards">
+
+
+                    <!-- SANDBOX CARD -->
+
+                    <a
+                        class="nav-card"
+                        href="sandbox.html"
+                    >
+
+                        <span class="idx">
+                            01
+                        </span>
+
+                        <h3>
+                            Enter the Sandbox
+                        </h3>
+
+                        <p>
+                            Control the trap and cool the cloud.
+                            See particles cluster into a condensate
+                            and watch the momentum distribution change.
+                        </p>
+
+                        <span class="go">
+                            Open sandbox →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- THEORY CARD -->
+
+                    <a
+                        class="nav-card"
+                        href="theory.html"
+                    >
+
+                        <span class="idx">
+                            02
+                        </span>
+
+                        <h3>
+                            Understand the Physics
+                        </h3>
+
+                        <p>
+                            Learn what T<sub>c</sub> means,
+                            why bosons can condense, and how the
+                            time-of-flight profile reveals the transition.
+                        </p>
+
+                        <span class="go">
+                            Read the theory →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- GUIDE CARD -->
+
+                    <a
+                        class="nav-card"
+                        href="guide.html"
+                    >
+
+                        <span class="idx">
+                            03
+                        </span>
+
+                        <h3>
+                            Follow the Guide
+                        </h3>
+
+                        <p>
+                            A short walkthrough of every control,
+                            from setting the trap geometry to reading
+                            the phase indicators.
+                        </p>
+
+                        <span class="go">
+                            Start the guide →
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer>
+
+            <span>
+                Simplified educational model ·
+                ideal-gas T<sub>c</sub> with a mean-field
+                condensate profile, not a full GPE solver.
+            </span>
+
+            <span>
+                Sandbox v1.0
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+    <!--
+        No sandbox.js here.
+
+        index.html only needs the Home page.
+        Sandbox simulation will be loaded only
+        from sandbox.html.
+    -->
+
+</body>
+
+</html>

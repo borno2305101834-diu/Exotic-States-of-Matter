@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Guide | Exotic States of Matter
+    </title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="wrap">
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="top">
+
+        <div class="brand">
+
+            <div class="eyebrow">
+                Exotic States of Matter
+            </div>
+
+            <h1>
+                Bose–Einstein
+                <em>Condensate</em>
+                Phase Sandbox
+            </h1>
+
+            <p>
+                Cool a trapped cloud of bosonic atoms toward
+                absolute zero and watch a classical gas collapse
+                into a single macroscopic matter wave.
+            </p>
+
+        </div>
+
+
+        <div class="top-meta">
+
+            MODEL &nbsp;·&nbsp; IDEAL + MEAN-FIELD
+
+            <br>
+
+            UNITS &nbsp;·&nbsp; nK &nbsp;/&nbsp; TRAP-NORMALIZED
+
+            <br>
+
+            STATUS &nbsp;·&nbsp;
+            <span style="color:var(--cyan)">
+                LIVE
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <nav
+        class="tabs"
+        id="tabs"
+        aria-label="Page navigation"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="sandbox.html">
+            Sandbox
+        </a>
+
+        <a href="theory.html">
+            Theory
+        </a>
+
+        <a
+            href="guide.html"
+            class="active"
+        >
+            Guide
+        </a>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         GUIDE PAGE
+         ===================================================== -->
+
+    <main>
+
+        <section
+            class="page current"
+            id="page-guide"
+        >
+
+
+            <!-- =================================================
+                 GUIDE INTRODUCTION
+                 ================================================= -->
+
+            <div class="page-head">
+
+                <div class="eyebrow">
+                    Walkthrough
+                </div>
+
+                <h1>
+                    Driving the trap
+                </h1>
+
+                <p>
+                    A practical tour of the controls.
+                    Open the Sandbox alongside this guide
+                    and follow along.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GUIDE STEPS
+                 ================================================= -->
+
+            <div class="guide-steps">
+
+
+                <!-- STEP 01 -->
+
+                <div class="gstep">
+
+                    <div class="step-num">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Set the trap geometry first
+                        </h3>
+
+                        <p>
+                            Atom Number and Trap Frequency both
+                            raise T<sub>c</sub>, so decide on those
+                            before you touch Temperature — they set
+                            the target you're cooling toward.
+                            Try the default
+                            <code>N = 20,000</code>
+                            and
+                            <code>1.00×</code>
+                            frequency to start.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 02 -->
+
+                <div class="gstep">
+
+                    <div class="step-num">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Sweep the Temperature slider
+                        </h3>
+
+                        <p>
+                            Drag it from high to low and watch
+                            the Trap Chamber: the cloud of
+                            orange/gold thermal atoms should
+                            contract and a dense cyan core should
+                            appear as you cross T<sub>c</sub>.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 03 -->
+
+                <div class="gstep">
+
+                    <div class="step-num">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Use the presets to jump straight
+                            to a regime
+                        </h3>
+
+                        <p>
+                            <code>Thermal Cloud</code>,
+                            <code>Sit at T<sub>c</sub></code>,
+                            and
+                            <code>Pure Condensate</code>
+                            snap Temperature to three
+                            characteristic points so you can
+                            compare them directly without
+                            hunting on the slider.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 04 -->
+
+                <div class="gstep">
+
+                    <div class="step-num">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Watch the Time-of-Flight Profile
+                        </h3>
+
+                        <p>
+                            This is the momentum distribution.
+                            A broad hump is thermal atoms; a narrow
+                            spike growing out of it is the condensate.
+                            Their coexistence — the bimodal shape —
+                            is the classic experimental signature
+                            of BEC.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 05 -->
+
+                <div class="gstep">
+
+                    <div class="step-num">
+                        05
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Adjust Interaction Strength
+                        </h3>
+
+                        <p>
+                            This widens or narrows the condensate
+                            core once it forms, standing in for
+                            the atomic scattering length
+                            a<sub>s</sub>. It has no effect above
+                            T<sub>c</sub>, since there's no
+                            condensate yet to shape.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 06 -->
+
+                <div class="gstep">
+
+                    <div class="step-num">
+                        06
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Read the stat strip and phase bar
+                        </h3>
+
+                        <p>
+                            T / T<sub>c</sub> and Condensate
+                            Fraction summarize the state numerically;
+                            the phase bar's marker slides along the
+                            same thermal → condensate spectrum as
+                            the trap chamber colors, and the phase
+                            cards below light up to match.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <span>
+            Simplified educational model ·
+            ideal-gas T<sub>c</sub> with a mean-field
+            condensate profile, not a full GPE solver.
+        </span>
+
+        <span>
+            Sandbox v1.0
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>

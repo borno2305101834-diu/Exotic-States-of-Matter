@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Sandbox | Exotic States of Matter
+    </title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="wrap">
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="top">
+
+        <div class="brand">
+
+            <div class="eyebrow">
+                Exotic States of Matter
+            </div>
+
+            <h1>
+                Bose–Einstein
+                <em>Condensate</em>
+                Phase Sandbox
+            </h1>
+
+            <p>
+                Cool a trapped cloud of bosonic atoms toward
+                absolute zero and watch a classical gas collapse
+                into a single macroscopic matter wave.
+            </p>
+
+        </div>
+
+
+        <div class="top-meta">
+
+            MODEL &nbsp;·&nbsp; IDEAL + MEAN-FIELD
+
+            <br>
+
+            UNITS &nbsp;·&nbsp; nK &nbsp;/&nbsp; TRAP-NORMALIZED
+
+            <br>
+
+            STATUS &nbsp;·&nbsp;
+            <span style="color:var(--cyan)">
+                LIVE
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <nav
+        class="tabs"
+        id="tabs"
+        aria-label="Page navigation"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a
+            href="sandbox.html"
+            class="active"
+        >
+            Sandbox
+        </a>
+
+        <a href="theory.html">
+            Theory
+        </a>
+
+        <a href="guide.html">
+            Guide
+        </a>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         SANDBOX
+         ===================================================== -->
+
+    <main>
+
+        <section
+            class="page current"
+            id="page-sandbox"
+        >
+
+
+            <!-- =================================================
+                 SIMULATION AREA
+                 ================================================= -->
+
+            <section class="sim">
+
+
+                <!-- ================= TRAP CHAMBER ================= -->
+
+                <div class="panel">
+
+                    <h2>
+                        Trap Chamber
+                    </h2>
+
+                    <div class="sub">
+                        real-space cloud · harmonic magnetic trap
+                    </div>
+
+
+                    <canvas
+                        id="trapCanvas"
+                    ></canvas>
+
+
+                    <div class="panel-foot">
+
+                        <div class="legend">
+
+                            <span>
+                                <i
+                                    class="dot"
+                                    style="background:var(--hot)"
+                                ></i>
+
+                                thermal atoms
+                            </span>
+
+
+                            <span>
+                                <i
+                                    class="dot"
+                                    style="background:var(--cyan)"
+                                ></i>
+
+                                condensate
+                            </span>
+
+                        </div>
+
+
+                        <span id="trapCount">
+                            N = 20,000
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= MOMENTUM PROFILE ================= -->
+
+                <div class="panel">
+
+                    <h2>
+                        Time-of-Flight Profile
+                    </h2>
+
+                    <div class="sub">
+                        momentum distribution · the bimodal signature
+                    </div>
+
+
+                    <canvas
+                        id="momCanvas"
+                    ></canvas>
+
+
+                    <div class="panel-foot">
+
+                        <span>
+                            velocity (v<sub>x</sub>)
+                        </span>
+
+                        <span>
+                            optical density
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 READOUT STRIP
+                 ================================================= -->
+
+            <section class="readout">
+
+
+                <!-- Temperature -->
+
+                <div class="stat">
+
+                    <div class="k">
+                        Temperature
+                    </div>
+
+                    <div
+                        class="v"
+                        id="statT"
+                    >
+                        250 nK
+                    </div>
+
+                </div>
+
+
+
+                <!-- Critical Temperature -->
+
+                <div class="stat">
+
+                    <div class="k">
+                        Critical Temp. T<sub>c</sub>
+                    </div>
+
+                    <div
+                        class="v"
+                        id="statTc"
+                    >
+                        108 nK
+                    </div>
+
+                </div>
+
+
+
+                <!-- Temperature Ratio -->
+
+                <div class="stat">
+
+                    <div class="k">
+                        T / T<sub>c</sub>
+                    </div>
+
+                    <div
+                        class="v"
+                        id="statRatio"
+                    >
+                        2.31
+                    </div>
+
+                </div>
+
+
+
+                <!-- Condensate Fraction -->
+
+                <div class="stat">
+
+                    <div class="k">
+                        Condensate Fraction
+                    </div>
+
+                    <div
+                        class="v"
+                        id="statFrac"
+                    >
+                        0%
+                    </div>
+
+                </div>
+
+
+
+                <!-- Phase -->
+
+                <div class="stat">
+
+                    <div class="k">
+                        Phase
+                    </div>
+
+                    <div
+                        class="v phase-thermal"
+                        id="statPhase"
+                    >
+                        Thermal Gas
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PHASE BAR
+                     ================================================= -->
+
+                <div class="phasebar">
+
+                    <div class="k">
+                        Phase Progress
+                        &nbsp;
+                        (T / T<sub>c</sub>, capped at 2.0)
+                    </div>
+
+
+                    <div class="track">
+
+                        <div
+                            class="marker"
+                            id="marker"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="track-labels">
+
+                        <span>
+                            0.0 — pure condensate
+                        </span>
+
+                        <span>
+                            1.0 — T<sub>c</sub>
+                        </span>
+
+                        <span>
+                            2.0 — thermal gas
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CONTROLS
+                 ================================================= -->
+
+            <section class="controls">
+
+
+                <div class="controls-head">
+
+                    <h2>
+                        Trap Controls
+                    </h2>
+
+
+                    <!-- Presets -->
+
+                    <div class="presets">
+
+                        <button
+                            type="button"
+                            id="presetHot"
+                        >
+                            ⤒ Thermal Cloud
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="presetTc"
+                        >
+                            ⦿ Sit at T<sub>c</sub>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="presetCold"
+                        >
+                            ⤓ Pure Condensate
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SLIDERS
+                     ================================================= -->
+
+                <div class="grid-sliders">
+
+
+                    <!-- Temperature -->
+
+                    <div class="field">
+
+                        <label for="temp">
+
+                            Temperature
+
+                            <span
+                                class="val"
+                                id="tempVal"
+                            >
+                                250 nK
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="range"
+                            id="temp"
+                            min="0"
+                            max="500"
+                            step="1"
+                            value="250"
+                        >
+
+
+                        <div class="hint">
+                            evaporative cooling depth
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Atom Number -->
+
+                    <div class="field">
+
+                        <label for="num">
+
+                            Atom Number
+
+                            <span
+                                class="val"
+                                id="numVal"
+                            >
+                                20,000
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="range"
+                            id="num"
+                            min="2"
+                            max="100"
+                            step="1"
+                            value="20"
+                        >
+
+
+                        <div class="hint">
+                            raises T<sub>c</sub> with N<sup>1/3</sup>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Trap Frequency -->
+
+                    <div class="field">
+
+                        <label for="freq">
+
+                            Trap Frequency
+
+                            <span
+                                class="val"
+                                id="freqVal"
+                            >
+                                1.00×
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="range"
+                            id="freq"
+                            min="50"
+                            max="200"
+                            step="1"
+                            value="100"
+                        >
+
+
+                        <div class="hint">
+                            tighter trap → higher T<sub>c</sub>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Interaction Strength -->
+
+                    <div class="field">
+
+                        <label for="inter">
+
+                            Interaction Strength
+
+                            <span
+                                class="val"
+                                id="interVal"
+                            >
+                                0.40
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="range"
+                            id="inter"
+                            min="0"
+                            max="100"
+                            step="1"
+                            value="40"
+                        >
+
+
+                        <div class="hint">
+                            scattering length a<sub>s</sub>,
+                            sets condensate width
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PHASE CARDS
+                 ================================================= -->
+
+            <section
+                class="cards"
+                id="cards"
+            >
+
+
+                <!-- THERMAL GAS -->
+
+                <div
+                    class="card"
+                    data-phase="thermal"
+                    style="--card-color:var(--hot)"
+                >
+
+                    <div class="tag">
+                        T ≫ T<sub>c</sub>
+                    </div>
+
+                    <h3>
+                        Thermal Gas
+                    </h3>
+
+                    <p>
+                        Atoms behave as classical billiard balls,
+                        spread thin and obeying Maxwell–Boltzmann
+                        statistics. Their de Broglie wavelengths
+                        are far shorter than the spacing between
+                        them, so quantum overlap is negligible.
+                    </p>
+
+                </div>
+
+
+
+                <!-- QUANTUM DEGENERACY -->
+
+                <div
+                    class="card"
+                    data-phase="cross"
+                    style="--card-color:var(--gold)"
+                >
+
+                    <div class="tag">
+                        T ≈ T<sub>c</sub>
+                    </div>
+
+                    <h3>
+                        Quantum Degeneracy
+                    </h3>
+
+                    <p>
+                        As the cloud cools, matter waves begin
+                        to overlap. Phase-space density approaches
+                        1, and a macroscopic population starts
+                        piling into the trap's ground state —
+                        the first spike appears in the velocity
+                        profile.
+                    </p>
+
+                </div>
+
+
+
+                <!-- BEC -->
+
+                <div
+                    class="card"
+                    data-phase="bec"
+                    style="--card-color:var(--cyan)"
+                >
+
+                    <div class="tag">
+                        T ≪ T<sub>c</sub>
+                    </div>
+
+                    <h3>
+                        Bose–Einstein Condensate
+                    </h3>
+
+                    <p>
+                        A single macroscopic matter wave now
+                        describes the whole core. Its shape is
+                        no longer set by temperature but by
+                        interatomic repulsion — the
+                        Thomas–Fermi profile you're steering
+                        with the interaction slider.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <span>
+            Simplified educational model ·
+            ideal-gas T<sub>c</sub> with a mean-field
+            condensate profile, not a full GPE solver.
+        </span>
+
+        <span>
+            Sandbox v1.0
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+<!-- =====================================================
+     SANDBOX JAVASCRIPT
+     ===================================================== -->
+
+<script src="js/sandbox.js"></script>
+
+</body>
+
+</html>
